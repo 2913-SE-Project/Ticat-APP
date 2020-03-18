@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Ticat2</string>
+    <string name="title_home">Movie</string>
+    <string name="title_dashboard">Ticket</string>
+    <string name="title_notifications">Account</string>
+    <string name="btn_hot">Hot Movie</string>
+    <string name="btn_com">Upcoming</string>
+    <string name="poster">poster</string>
+</resources>
