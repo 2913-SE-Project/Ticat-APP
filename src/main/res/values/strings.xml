@@ -6,4 +6,12 @@
     <string name="btn_hot">Hot Movie</string>
     <string name="btn_com">Upcoming</string>
     <string name="poster">poster</string>
+    <string name="today">Today\n12-17</string>
+    <string name="second_day">Friday\n12-18</string>
+    <string name="third_day">Saturday\n12-19</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="left">left</string>
+    <string name="right">right</string>
 </resources>
