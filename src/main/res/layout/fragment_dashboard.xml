@@ -28,30 +28,12 @@
             app:layout_constraintTop_toTopOf="@+id/guideline9"
             app:layout_constraintBottom_toTopOf="@+id/guideline10"
             android:id="@+id/tabLayout1">
-
-        <!--<com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/today"
-                android:id="@+id/tab1"/>
-
-        <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/second_day"
-                android:id="@+id/tab2"/>
-
-        <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/third_day"
-                android:id="@+id/tab3"/>-->
     </com.google.android.material.tabs.TabLayout>
 
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            app:srcCompat="@drawable/nineteen"
+            app:srcCompat="@drawable/greenbook"
             android:id="@+id/poster"
             android:layout_margin="10dp"
             android:contentDescription="@string/poster"
@@ -67,7 +49,6 @@
             android:id="@+id/left"
             app:layout_constraintBottom_toTopOf="@+id/guideline9"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/poster"
             app:layout_constraintStart_toStartOf="parent"
             android:contentDescription="@string/left"/>
 
@@ -79,7 +60,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/guideline9"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/poster"
             android:contentDescription="@string/right"/>
 
     <androidx.viewpager.widget.ViewPager
