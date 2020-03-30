@@ -1,6 +1,7 @@
 package com.temp.ticat2;
 
 import android.os.Bundle;
+import android.view.View;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,11 +10,13 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.tabs.TabLayout;
+import com.temp.ticat2.ui.home.Util;
+
+import java.sql.Connection;
 
 public class MainActivity extends AppCompatActivity {
     // Activity代表用户界面
     // 可以创建一个窗口并在窗口上加载用户界面（UI），以实现交互
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -6,32 +6,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <Button
-            android:id="@+id/btn_hot"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/btn_com"
-            android:background="@drawable/button_circle_shape"
-            android:text="Hot Movie"
-            app:layout_constraintTop_toTopOf="@+id/guideline">
-
-    </Button>
-
-    <Button
-            android:id="@+id/btn_com"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            app:layout_constraintLeft_toRightOf="@+id/btn_hot"
-            app:layout_constraintRight_toRightOf="parent"
-            android:background="@drawable/button_circle_shape"
-            android:text="Upcoming"
-            app:layout_constraintTop_toTopOf="@+id/guideline">
-
-    </Button>
-
     <LinearLayout
             android:id="@+id/lrlayout1"
             android:layout_width="match_parent"

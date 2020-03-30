@@ -16,4 +16,6 @@
     <string name="right">right</string>
     <string name="hot_movies">Hot Movies</string>
     <string name="upcoming">Upcoming</string>
+    <string name="movie_info">106 mins | Comedy | Actor names</string>
+    <string name="movie_title">Movie Title</string>
 </resources>

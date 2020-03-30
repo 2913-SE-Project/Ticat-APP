@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -12,6 +13,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 import com.temp.ticat2.R;
@@ -21,6 +23,7 @@ import com.temp.ticat2.ui.dashboard.ThirdFragment;
 import com.temp.ticat2.ui.dashboard.TodayFragment;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment {
 
@@ -41,6 +44,7 @@ public class HomeFragment extends Fragment {
         return root;
     }
 
+    // 创建tab layout + view pager
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -83,4 +87,7 @@ public class HomeFragment extends Fragment {
             return temp[position];
         }
     }
+
+
+
 }

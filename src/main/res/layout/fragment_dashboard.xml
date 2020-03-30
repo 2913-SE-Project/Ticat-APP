@@ -21,6 +21,41 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.4"/>
 
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline9"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintStart_toEndOf="@+id/left"
+            android:id="@+id/linearlayout">
+
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="171dp"
+                app:srcCompat="@drawable/greenbook"
+                android:id="@+id/imageView"
+                android:textAlignment="center"
+                android:layout_weight="1"/>
+
+        <TextView
+                android:text="@string/movie_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:textAlignment="center"
+                android:layout_weight="1"/>
+
+        <TextView
+                android:text="@string/movie_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1"
+                android:textAlignment="center"
+                android:layout_weight="1"/>
+    </LinearLayout>
+
     <com.google.android.material.tabs.TabLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,18 +64,6 @@
             app:layout_constraintBottom_toTopOf="@+id/guideline10"
             android:id="@+id/tabLayout1">
     </com.google.android.material.tabs.TabLayout>
-
-    <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            app:srcCompat="@drawable/greenbook"
-            android:id="@+id/poster"
-            android:layout_margin="10dp"
-            android:contentDescription="@string/poster"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/guideline9"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
 
     <Button
             android:layout_width="0dp"
