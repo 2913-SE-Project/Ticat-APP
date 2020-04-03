@@ -18,9 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <uses-library android:name="org.apache.http.legacy" android:required="false" />
     </application>
 
     <!--配置网络权限-->
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
 
 </manifest>

@@ -1,10 +1,13 @@
 package com.temp.ticat2.ui.home;
 
+import android.util.Log;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
 
 public class Util {
     // 创建连接
@@ -16,13 +19,17 @@ public class Util {
             // com.mysql.cj.jdbc.Driver
             // org.gjt.mm.mysql.Drivers
             // libs/com.mysql.cj.jdbc.Driver
-            final String DRIVER_NAME = "new com.mysql.cj.jdbc.Driver";
+            // new com.mysql.cj.jdbc.Driver
+            System.out.println("试试加载MySQL驱动！");
+            final String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
             Class.forName(DRIVER_NAME);
             System.out.println("成功加载MySQL驱动！");
-            conn = DriverManager.getConnection(url, user, password);
+            conn = DriverManager.getConnection("jdbc:mysql://101.200.167.221:3306/Ticat?user=Ticat＆password=yjx3THEm5YTFnswG");
         } catch (ClassNotFoundException e) {
+            e.printStackTrace();
             conn = null;
         } catch (SQLException e) {
+            e.printStackTrace();
             conn = null;
         }
         return conn;
@@ -32,6 +39,7 @@ public class Util {
     public static void query(Connection conn, String sql) {
 
         if (conn ==  null) {
+            System.out.println("conn是空的！");
             return;
         }
 
@@ -134,8 +142,10 @@ public class Util {
                 String Mid = result.getString("Mid");
                 int mid = Integer.parseInt(Mid);
                 String mName = result.getString("Mname");
-                mNames[mid-1] = mName;
+                System.out.println("准备中的mName："+mName);
+                mNames[mid] = mName;
             }
+            System.out.println("mNames准备就绪！");
             return mNames;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -156,6 +166,5 @@ public class Util {
             }
         }
     }
-
 
 }
