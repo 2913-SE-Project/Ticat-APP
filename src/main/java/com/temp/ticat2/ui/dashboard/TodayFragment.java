@@ -8,9 +8,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.lifecycle.MutableLiveData;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.temp.ticat2.R;
+import com.temp.ticat2.ui.home.Movie;
+import com.temp.ticat2.ui.home.MovieAdapter;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class TodayFragment extends Fragment {
+    private String URL = DashboardFragment.URL;
+    private String USER = DashboardFragment.USER;
+    private String PASSWORD = DashboardFragment.PASSWORD;
+
+    public int screenNum = 0;
+
+    public List<Screen> screenList = new ArrayList<>();
+
+    private View root;
 
     public TodayFragment() {
         // Required empty public constructor
@@ -19,7 +38,30 @@ public class TodayFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        root = inflater.inflate(R.layout.fragment_today, container, false);
+
+        initScreens();
+
+        RecyclerView recyclerView = (RecyclerView) root.findViewById(R.id.recyclerview2);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this.getActivity());
+        recyclerView.setLayoutManager(layoutManager);
+        ScreenAdapter adapter = new ScreenAdapter(screenList);
+        recyclerView.setAdapter(adapter);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_today, container, false);
+        return root;
     }
+
+    public void initScreens(){
+        /*Date time = null;
+        try {
+            time = new SimpleDateFormat("HH:mm:ss").parse("10:00:00");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }*/
+        Screen scr = new Screen("Enilish","3D","Hall 3",4.99);
+        screenList.add(scr);
+        screenList.add(scr);
+        screenList.add(scr);
+    }
+
 }

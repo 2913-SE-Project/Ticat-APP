@@ -15,9 +15,61 @@
 
     </ImageView>
 
-    <TextView
-            android:text="@string/movie_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/movie_title"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:layout_width="200dp"
+            android:layout_height="match_parent">
+        <TextView
+                android:text="@string/movie_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:id="@+id/movie_title"/>
+
+        <TextView
+                android:text="Director"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/movie_dirct"/>
+
+        <TextView
+                android:text="2020-01-01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/movie_date"/>
+
+        <LinearLayout
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="10dp"
+                android:layout_height="30dp">
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/button_circle_shape"
+                    android:text="Buy it"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:id="@+id/btn_buy">
+
+            </Button>
+            <Button
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/heart"
+                    android:id="@+id/favorite">
+
+            </Button>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 </LinearLayout>

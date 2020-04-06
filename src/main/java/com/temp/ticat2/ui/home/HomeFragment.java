@@ -32,7 +32,7 @@ public class HomeFragment extends Fragment {
     private TabLayout tabLayout;
     private ViewPager viewpager;
     ArrayList fragmentList = new ArrayList<Fragment>();
-    String[] temp = {"Hot Movies","Upcoming"};
+    String[] temp = {"Hot Movies","Searching"};
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {

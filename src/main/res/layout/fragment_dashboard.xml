@@ -68,7 +68,7 @@
     <Button
             android:layout_width="0dp"
             android:layout_height="80dp"
-            android:background="@drawable/left"
+            android:background="@drawable/arrow_left"
             android:id="@+id/left"
             app:layout_constraintBottom_toTopOf="@+id/guideline9"
             app:layout_constraintTop_toTopOf="parent"
@@ -78,7 +78,7 @@
     <Button
             android:layout_width="0dp"
             android:layout_height="80dp"
-            android:background="@drawable/right"
+            android:background="@drawable/arrow_right"
             android:id="@+id/right"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/guideline9"
@@ -92,7 +92,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/viewpager1"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintBottom_toTopOf="@+id/guideline13">
 
     </androidx.viewpager.widget.ViewPager>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline13"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

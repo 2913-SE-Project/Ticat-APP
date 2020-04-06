@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.temp.ticat2.R;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
@@ -17,17 +18,21 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
     static class ViewHolder extends RecyclerView.ViewHolder{
         ImageView movieImage;
         TextView movieName;
+        TextView movieDirct;
+        TextView movieDate;
 
         public ViewHolder (View view){
             super(view);
             movieImage = (ImageView) view.findViewById(R.id.poster);
             movieName = (TextView) view.findViewById(R.id.movie_title);
+            movieDirct = (TextView) view.findViewById(R.id.movie_dirct);
+            movieDate = (TextView) view.findViewById(R.id.movie_date);
         }
 
     }
 
-    public  MovieAdapter (List <Movie> fruitList){
-        mMovieList = fruitList;
+    public  MovieAdapter (List <Movie> movieList){
+        mMovieList = movieList;
     }
 
     @NonNull
@@ -45,6 +50,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
         Movie movie = mMovieList.get(position);
         holder.movieImage.setImageResource(movie.getPoster());
         holder.movieName.setText(movie.getName());
+        holder.movieDirct.setText("Director:"+movie.getDirector());
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String date = formatter.format(movie.getReleaseDate());
+        holder.movieDate.setText(date);
     }
 
     @Override

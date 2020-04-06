@@ -20,6 +20,11 @@ import java.util.ArrayList;
 
 public class DashboardFragment extends Fragment {
 
+    public static final String REMOTE_IP = "101.200.167.221:3306";
+    public static final String URL = "jdbc:mysql://" + REMOTE_IP + "/Ticat";
+    public static final String USER = "Ticat";
+    public static final String PASSWORD = "yjx3THEm5YTFnswG";
+
     private DashboardViewModel dashboardViewModel;
     private View root;
     private TabLayout tabLayout;

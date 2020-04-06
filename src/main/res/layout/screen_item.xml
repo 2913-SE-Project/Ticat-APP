@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_margin="10dp"
+              android:background="@drawable/underline"
+              android:layout_width="match_parent"
+              android:layout_height="50dp">
+    <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <TextView
+                android:layout_weight="1"
+                android:id="@+id/timeS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10:00"
+                android:textSize="20dp">
+
+        </TextView>
+        <TextView
+                android:id="@+id/timeF"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Finish at 11:50"
+                android:textSize="10dp">
+
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <TextView
+                android:layout_weight="1"
+                android:id="@+id/language"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="English 3D"
+                android:textSize="15dp">
+
+        </TextView>
+        <TextView
+                android:layout_weight="1"
+                android:id="@+id/hall_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hall 3"
+                android:textSize="15dp">
+
+        </TextView>
+    </LinearLayout>
+
+    <TextView
+            android:layout_weight="1"
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="￡4.99"
+            android:textSize="25dp">
+
+    </TextView>
+
+    <Button
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="buy"
+            android:id="@+id/btn_buyscr">
+
+    </Button>
+
+</LinearLayout>
