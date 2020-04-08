@@ -14,6 +14,7 @@ import com.temp.ticat2.R;
 import com.temp.ticat2.ui.home.Movie;
 import com.temp.ticat2.ui.home.MovieAdapter;
 
+import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -30,6 +31,8 @@ public class TodayFragment extends Fragment {
     public List<Screen> screenList = new ArrayList<>();
 
     private View root;
+
+    private Connection conn;
 
     public TodayFragment() {
         // Required empty public constructor
@@ -52,10 +55,56 @@ public class TodayFragment extends Fragment {
     }
 
     public void initScreens(){
-        /*Date time = null;
+        /*final Thread thread = new Thread((Runnable) () -> {
+            // TODO Auto-generated method stub
+            try {
+                // 加载MySQL驱动
+                Class.forName("com.mysql.jdbc.Driver");
+                // 连接到数据库
+                conn = (Connection) DriverManager.getConnection(URL, USER, PASSWORD);
+                String sql;
+                sql = "select * from screenings";
+                Statement statement;
+                ResultSet result;
+                if (conn != null){// connection不为null表示与数据库建立了连接
+                    try {
+                        statement = conn.createStatement();
+                        result = statement.executeQuery(sql);
+                        while(result.next()){
+                            String Mid = result.getString("Mid");
+                            String mName = result.getString("Mname");
+                            String director = result.getString("Director");
+                            Date releaseDate = result.getDate("ReleaseDate");
+
+                            int mid = Integer.parseInt(Mid);
+                            mNames[mid-1] = mName;
+                            directors[mid-1] = director;
+                            releaseDates[mid-1] = releaseDate;
+                        }
+                        result.close();
+                        statement.close();
+                        conn.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }else{
+                    System.out.println("失败了！空的！");
+                }
+                for(int i=0; i<10; i++){
+                    Movie m = new Movie(ids[i],mNames[i],directors[i],releaseDates[i],posterIds[i]);
+                    //System.out.println("mName:"+m.getName());
+                    movieList.add(m);
+                }
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                System.out.println("连接数据库失败！");
+                e.printStackTrace();
+            }
+        });
+        thread.start();
         try {
-            time = new SimpleDateFormat("HH:mm:ss").parse("10:00:00");
-        } catch (ParseException e) {
+            thread.join();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }*/
         Screen scr = new Screen("Enilish","3D","Hall 3",4.99);
