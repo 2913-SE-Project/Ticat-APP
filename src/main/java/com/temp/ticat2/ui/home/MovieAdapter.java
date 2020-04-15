@@ -1,10 +1,13 @@
 package com.temp.ticat2.ui.home;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.temp.ticat2.R;
@@ -16,6 +19,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
 
     private List<Movie> mMovieList;
     static class ViewHolder extends RecyclerView.ViewHolder{
+        LinearLayout movieItem;
         ImageView movieImage;
         TextView movieName;
         TextView movieDirct;
@@ -23,10 +27,22 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
 
         public ViewHolder (View view){
             super(view);
+            movieItem = view.findViewById(R.id.linear_movie_item);
             movieImage = (ImageView) view.findViewById(R.id.poster);
             movieName = (TextView) view.findViewById(R.id.movie_title);
             movieDirct = (TextView) view.findViewById(R.id.movie_dirct);
             movieDate = (TextView) view.findViewById(R.id.movie_date);
+
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(v.getContext(),"jump!!!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent();
+                    // (当前Activity，目标Activity)
+                    intent.setClass(v.getContext(), DetailActivity.class);
+                    v.getContext().startActivity(intent);
+                }
+            });
         }
 
     }

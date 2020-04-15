@@ -23,6 +23,7 @@ import com.temp.ticat2.ui.home.Movie;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class DashboardFragment extends Fragment {
 
@@ -41,15 +42,17 @@ public class DashboardFragment extends Fragment {
     private ImageView poster;
     private TextView title;
     private TextView info;
+    private TodayFragment tf = new TodayFragment();
+    private SecondFragment sf = new SecondFragment();
 
     ArrayList fragmentList = new ArrayList<Fragment>();
-    String[] temp = {"Today\n12-17","Friday\n12-18","Saturday\n12-19"};
+    String[] temp = {"Today\n03-05","Tomorrow\n03-06"};
 
     public int[] posterIds = new int[]{
             R.drawable.pic_1, R.drawable.pic_2, R.drawable.pic_3, R.drawable.pic_4, R.drawable.pic_5,
             R.drawable.pic_6, R.drawable.pic_7, R.drawable.pic_8, R.drawable.pic_9, R.drawable.pic_10,
     };
-    public int crt_id;
+    public static int crt_id;
 
     public DashboardFragment() {
     }
@@ -70,8 +73,6 @@ public class DashboardFragment extends Fragment {
         left.setOnClickListener(this::onClick);
         right.setOnClickListener(this::onClick);
         initInfo();
-
-
         return root;
     }
 
@@ -86,9 +87,8 @@ public class DashboardFragment extends Fragment {
     }
 
     private void initFragment() {
-        fragmentList.add(new TodayFragment());
-        fragmentList.add(new SecondFragment());
-        fragmentList.add(new ThirdFragment());
+        fragmentList.add(tf);
+        fragmentList.add(sf);
     }
 
     public class FragmentAdapter extends FragmentPagerAdapter {
@@ -121,9 +121,8 @@ public class DashboardFragment extends Fragment {
 
     public void initInfo(){
         crt_id = 1;
-        poster.setImageResource(posterIds[0]);
-        title.setText("Movie Title");
-        info.setText("106 mins | Comedy | Actor names");
+        poster.setImageResource(posterIds[crt_id-1]);
+        changeInfo(crt_id);
     }
 
     //@Override
@@ -146,6 +145,8 @@ public class DashboardFragment extends Fragment {
             crt_id--;
             poster.setImageResource(posterIds[crt_id-1]);
             changeInfo(crt_id);
+            tf.initScreens();
+            sf.initScreens();
         }
         else{
             Toast.makeText(getActivity(),"Almost the first movie",Toast.LENGTH_SHORT).show();
@@ -158,12 +159,15 @@ public class DashboardFragment extends Fragment {
             crt_id++;
             poster.setImageResource(posterIds[crt_id-1]);
             changeInfo(crt_id);
+            tf.initScreens();
+            sf.initScreens();
         }
         else{
             Toast.makeText(getActivity(),"Almost the last movie",Toast.LENGTH_SHORT).show();
         }
     }
 
+    // change the info below the movie poster
     private void changeInfo(int crt_id){
         final Thread thread = new Thread(new Runnable() {
             @Override
@@ -205,7 +209,6 @@ public class DashboardFragment extends Fragment {
                     }
                     title.setText(mName);
                     info.setText(runningTime+" mins | "+mType);
-                    System.out.println("mname:" + mName);
                 } catch (Exception e) {
                     // TODO Auto-generated catch block
                     System.out.println("连接数据库失败！");

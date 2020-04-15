@@ -1,10 +1,9 @@
 package com.temp.ticat2.ui.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.*;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -114,6 +113,7 @@ public class HotFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         MovieAdapter adapter = new MovieAdapter(movieList);
         recyclerView.setAdapter(adapter);
+
         // Inflate the layout for this fragment
         return root;
     }

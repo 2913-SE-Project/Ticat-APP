@@ -12,6 +12,7 @@ import com.temp.ticat2.R;
 import com.temp.ticat2.ui.home.Movie;
 import com.temp.ticat2.ui.home.MovieAdapter;
 
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -22,16 +23,16 @@ public class ScreenAdapter extends RecyclerView.Adapter<ScreenAdapter.ViewHolder
     private List<Screen> mScreenList;
 
     static class ViewHolder extends RecyclerView.ViewHolder{
-        //TextView movieTimeS;
-        //TextView movieTimeF;
+        TextView movieTimeS;
+        TextView movieTimeF;
         TextView language;
         TextView hallName;
         TextView price;
 
         public ViewHolder (View view){
             super(view);
-            //movieTimeS = (TextView) view.findViewById(R.id.timeS);
-            //movieTimeF = (TextView) view.findViewById(R.id.timeF);
+            movieTimeS = (TextView) view.findViewById(R.id.timeS);
+            movieTimeF = (TextView) view.findViewById(R.id.timeF);
             language = (TextView) view.findViewById(R.id.language);
             hallName = (TextView) view.findViewById(R.id.hall_name);
             price = (TextView) view.findViewById(R.id.price);
@@ -56,17 +57,20 @@ public class ScreenAdapter extends RecyclerView.Adapter<ScreenAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ScreenAdapter.ViewHolder holder, int position) {
         // 用于对子项的数据进行赋值,会在每个子项被滚动到屏幕内时执行
         Screen screen = mScreenList.get(position);
-        //SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
-        //String times = formatter.format(screen.getTime());
-        //Calendar c = Calendar.getInstance();
-        //c.setTime(screen.getTime());
-        //c.add(Calendar.MINUTE,screen.getDuration());
-        //String timef = formatter.format(c.getTime());
-        //holder.movieTimeS.setText("times");
-        //holder.movieTimeF.setText("Finish at "+"timef");
+
+        Timestamp dateTime = screen.getTime();
+        String times = new SimpleDateFormat("HH:mm").format(dateTime);
+        long time2 = dateTime.getTime() + screen.getDuration()*60*1000;
+        dateTime.setTime(time2);
+        String timef = new SimpleDateFormat("HH:mm").format(dateTime);/**/
+
+        holder.movieTimeS.setText(times);
+        holder.movieTimeF.setText("Finish at "+timef);
         holder.language.setText(screen.getLanguage()+" "+screen.getDType());
-        holder.hallName.setText(screen.getHall());
+        holder.hallName.setText("Hall "+screen.getHall()+" "+screen.gethType());
         holder.price.setText("￡"+screen.getPrice());
+        //String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(time);
+
     }
 
     @Override

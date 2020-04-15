@@ -68,7 +68,8 @@
     <Button
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@drawable/arrow_left"
+
+            android:background="@drawable/ripple_item_single_left"
             android:id="@+id/left"
             app:layout_constraintBottom_toTopOf="@+id/guideline9"
             app:layout_constraintTop_toTopOf="parent"
@@ -78,7 +79,7 @@
     <Button
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@drawable/arrow_right"
+            android:background="@drawable/ripple_item_single_right"
             android:id="@+id/right"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/guideline9"

@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:background="@drawable/shape_corner"
+              android:id="@+id/linear_movie_item"
               android:layout_margin="10dp"
               android:orientation="horizontal"
               android:layout_width="match_parent"

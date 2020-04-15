@@ -1,40 +1,42 @@
 package com.temp.ticat2.ui.dashboard;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class Screen {
     private int sid;
     private int duration;
-    private Date time;
+    private Timestamp dateTime;
     private String language;
     private String dType;
-    private String hall;
+    private int hall;
+    private String hType;
     private double price;
 
     public Screen(){
 
     }
 
-    public Screen(int sid,int duration,Date time,String language,String dType,String hall,double price){
-        this.sid = sid;
+    public Screen(int duration,Timestamp time,String language,String dType,int hall,String hType,double price){
         this.duration = duration;
-        this.time = time;
+        this.dateTime = time;
         this.language = language;
         this.dType = dType;
         this.hall = hall;
+        this.hType = hType;
         this.price = price;
     }
 
-    public Screen(int duration,Date time,String language,String dType,String hall,double price){
+    public Screen(int duration,String language,String dType,int hall,String hType,double price){
         this.duration = duration;
-        this.time = time;
         this.language = language;
         this.dType = dType;
         this.hall = hall;
+        this.hType = hType;
         this.price = price;
     }
 
-    public Screen(String language,String dType,String hall,double price){
+    public Screen(String language,String dType,int hall,double price){
         this.language = language;
         this.dType = dType;
         this.hall = hall;
@@ -49,8 +51,12 @@ public class Screen {
         return duration;
     }
 
-    public Date getTime(){
-        return time;
+    public Timestamp getTime(){
+        return dateTime;
+    }
+
+    public String gethType() {
+        return hType;
     }
 
     public String getLanguage() {
@@ -61,7 +67,7 @@ public class Screen {
         return dType;
     }
 
-    public String getHall() {
+    public int getHall() {
         return hall;
     }
 
