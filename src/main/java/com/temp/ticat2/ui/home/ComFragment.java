@@ -1,5 +1,6 @@
 package com.temp.ticat2.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.*;
@@ -8,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.temp.ticat2.R;
+
+import java.util.Arrays;
 
 public class ComFragment extends Fragment {
     private static final String REMOTE_IP = "101.200.167.221:3306";
@@ -58,8 +61,8 @@ public class ComFragment extends Fragment {
                 if (TextUtils.isEmpty(newText)){
                     listView.clearTextFilter();
                 }else{
-                    listView.setFilterText(newText);
-//          adapter.getFilter().filter(newText.toString());//替换成本句后消失黑框！！！
+                    //listView.setFilterText(newText);
+                    adapter.getFilter().filter(newText.toString());//替换成本句后消失黑框！！！
                 }
                 return true;
             }
@@ -68,12 +71,30 @@ public class ComFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Object string = adapter.getItem(position);
+                int Mid = searchId((String)string);
+                if(Mid < 0){
+                    Mid = 1;
+                }
                 searchView.setQuery(string.toString(),true);
+                Intent intent = new Intent(view.getContext(), DetailActivity.class);
+                // (当前Activity，目标Activity)
+                //intent.setClass(v.getContext(), DetailActivity.class);
+                intent.putExtra("crt_id", Mid+1);
+                System.out.println("Mid: "+Mid+1);
+                view.getContext().startActivity(intent);
             }
         });
         // Inflate the layout for this fragment
         return root;
     }
 
+    private int searchId(String s){
+        for(int i=0; i<mNames.length; i++){
+            if (mNames[i].equals(s)){
+                return i;
+            }
+        }
+        return 0;
+    }
 
 }

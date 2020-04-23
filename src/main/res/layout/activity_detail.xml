@@ -53,7 +53,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:srcCompat="@drawable/pic_1"
-            android:id="@+id/imageView"
+            android:id="@+id/d_poster"
             android:layout_margin="10dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline14"
             app:layout_constraintTop_toTopOf="@+id/guideline18"
@@ -89,7 +89,7 @@
             android:text="Buy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button"
+            android:id="@+id/btn_d_buy"
             android:layout_margin="5dp"
             android:background="@drawable/button_circle_shape"
             app:layout_constraintEnd_toStartOf="@+id/guideline15"
@@ -99,10 +99,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:background="@drawable/heart"
-            android:id="@+id/button2"
+            android:id="@+id/btn_d_heart"
             android:layout_margin="5dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline14"
-            app:layout_constraintEnd_toStartOf="@+id/button"
+            app:layout_constraintEnd_toStartOf="@+id/btn_d_buy"
             app:layout_constraintStart_toStartOf="@+id/guideline16"/>
 
     <TextView
@@ -122,7 +122,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:id="@+id/textView3"
+            android:id="@+id/d_info"
             android:textSize="20dp"
             android:scrollbars = "vertical"
             app:layout_constraintTop_toTopOf="@+id/guideline19"
@@ -133,7 +133,7 @@
             android:text="Movie Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView4"
+            android:id="@+id/d_title"
             android:layout_marginTop="10dp"
             android:textSize="20dp"
             android:textColor="#000000"
@@ -145,36 +145,36 @@
             android:text="109 mins/ Comedy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView"
+            android:id="@+id/d_time_type"
             android:textSize="15dp"
             app:layout_constraintStart_toStartOf="@+id/guideline16"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"/>
+            app:layout_constraintTop_toBottomOf="@+id/d_title"/>
 
     <TextView
             android:text="Release: 24th March, 2020"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView5"
+            android:id="@+id/d_release"
             android:textSize="15dp"
             app:layout_constraintStart_toStartOf="@+id/guideline16"
-            app:layout_constraintTop_toBottomOf="@+id/textView"/>
+            app:layout_constraintTop_toBottomOf="@+id/d_time_type"/>
 
     <TextView
             android:text="Director: xxx"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView6"
+            android:id="@+id/d_director"
             android:textSize="15dp"
             app:layout_constraintStart_toStartOf="@+id/guideline16"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"/>
+            app:layout_constraintTop_toBottomOf="@+id/d_release"/>
 
     <TextView
             android:text="Actors: xxx  xxx"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView7"
+            android:id="@+id/d_actor"
             android:textSize="15dp"
             app:layout_constraintStart_toStartOf="@+id/guideline16"
-            app:layout_constraintTop_toBottomOf="@+id/textView6"/>
+            app:layout_constraintTop_toBottomOf="@+id/d_director"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

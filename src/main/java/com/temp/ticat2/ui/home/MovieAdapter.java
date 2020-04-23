@@ -18,12 +18,14 @@ import java.util.List;
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
 
     private List<Movie> mMovieList;
+
     static class ViewHolder extends RecyclerView.ViewHolder{
         LinearLayout movieItem;
         ImageView movieImage;
         TextView movieName;
         TextView movieDirct;
         TextView movieDate;
+        int Mid;
 
         public ViewHolder (View view){
             super(view);
@@ -37,10 +39,13 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(v.getContext(),"jump!!!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent();
+                    Intent intent = new Intent(v.getContext(), DetailActivity.class);
                     // (当前Activity，目标Activity)
-                    intent.setClass(v.getContext(), DetailActivity.class);
+                    //intent.setClass(v.getContext(), DetailActivity.class);
+                    intent.putExtra("crt_id", Mid);
+                    System.out.println("Mid: "+Mid);
                     v.getContext().startActivity(intent);
+                    //v.getContext().startActivityForResult(intent, requestCode);
                 }
             });
         }
@@ -70,6 +75,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         String date = formatter.format(movie.getReleaseDate());
         holder.movieDate.setText(date);
+        holder.Mid = movie.getMid();
     }
 
     @Override
