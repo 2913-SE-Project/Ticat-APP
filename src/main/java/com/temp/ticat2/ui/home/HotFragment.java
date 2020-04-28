@@ -157,9 +157,12 @@ public class HotFragment extends Fragment {
                                 dTypes[mid] = dType;
                                 intros[mid] = intro;
                                 releaseDates[mid] = releaseDate;*/
-                                mNames[mid-1] = mName;
-                                directors[mid-1] = director;
-                                releaseDates[mid-1] = releaseDate;
+                                if(mid<=10){
+                                    mNames[mid-1] = mName;
+                                    directors[mid-1] = director;
+                                    releaseDates[mid-1] = releaseDate;
+                                }
+
                             }
                             result.close();
                             statement.close();

@@ -89,7 +89,7 @@ public class SecondFragment extends Fragment {
                         result = statement.executeQuery(sql);
                         while(result.next()){
                             time = result.getInt("RunningTime");
-                            language = result.getString("Lanuage");
+                            language = result.getString("Language");
                             dType = result.getString("Dtype");
                         }
 

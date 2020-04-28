@@ -18,4 +18,13 @@
     <string name="upcoming">Upcoming</string>
     <string name="movie_info">106 mins | Comedy | Actor names</string>
     <string name="movie_title">Movie Title</string>
+    <string name="avator">avator</string>
+    <string name="username">Username</string>
+    <string name="perchased_tickets">Perchased Tickets</string>
+    <string name="favorite_movies">Favorite movies</string>
+    <string name="account_information">Account Information</string>
+    <string name="log_out">Log out</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="welcome_nplease_login">Welcome!\nPlease Login</string>
 </resources>
