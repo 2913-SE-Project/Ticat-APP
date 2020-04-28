@@ -24,11 +24,12 @@ public class NotificationsFragment extends Fragment {
     private NotificationsViewModel notificationsViewModel;
     public SharedPreferences sharedPreferences;
     public SharedPreferences.Editor editor;
-    public String username;
+    public static String username;
     public String password;
     private View root;
     private Button btnLogin;
     private Button btnLogout;
+    private Button btnFavorite;
     private TextView usertext;
 
     @Override
@@ -55,6 +56,14 @@ public class NotificationsFragment extends Fragment {
             root = inflater.inflate(R.layout.fragment_notifications, container, false);
             usertext = root.findViewById(R.id.username);
             usertext.setText(username);
+            btnFavorite = root.findViewById(R.id.favorite);
+            btnFavorite.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(v.getContext(), FavoriteActivity.class);
+                    v.getContext().startActivity(intent);
+                }
+            });
             btnLogout = root.findViewById(R.id.log_out);
             btnLogout.setOnClickListener(new View.OnClickListener() {
                 @Override

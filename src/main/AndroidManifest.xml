@@ -29,6 +29,10 @@
                   android:parentActivityName=".MainActivity">
 
         </activity>
+        <activity android:name=".ui.notifications.FavoriteActivity"
+                  android:parentActivityName=".MainActivity">
+
+        </activity>
         <uses-library android:name="org.apache.http.legacy" android:required="false" />
     </application>
 

@@ -95,11 +95,12 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline15"
             app:layout_constraintBottom_toTopOf="@+id/guideline14"/>
 
-    <Button
+    <ImageButton
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:background="@drawable/heart"
             android:id="@+id/btn_d_heart"
+            android:contentDescription="heart"
             android:layout_margin="5dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline14"
             app:layout_constraintEnd_toStartOf="@+id/btn_d_buy"

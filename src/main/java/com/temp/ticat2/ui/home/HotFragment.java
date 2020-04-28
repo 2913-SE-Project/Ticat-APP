@@ -43,37 +43,6 @@ public class HotFragment extends Fragment {
             "Director","Director","Director","Director","Director"
     };
 
-    /*public String[] mTypes = new String[]{
-            "Comedy","Comedy","Comedy","Comedy","Comedy",
-            "Comedy","Comedy","Comedy","Comedy","Comedy"
-    };
-
-    public String[] languages = new String[]{
-            "English", "English", "English", "English", "English",
-            "English", "English", "English", "English", "English"
-    };
-
-    public String[] countires = new String[]{
-            "USA","USA","USA","USA","USA",
-            "USA","USA","USA","USA","USA"
-    };
-
-    public int[] runningTimes = new int[]{
-            120,120,120,120,120,
-            120,120,120,120,120
-    };
-
-    public String[] dTypes = new String[]{
-            "2D","2D","2D","2D","2D",
-            "2D","2D","2D","2D","2D"
-    };
-
-    public String[] intros = new String[]{
-            "Movie profile: xxxxxx","Movie profile: xxxxxx","Movie profile: xxxxxx","Movie profile: xxxxxx","Movie profile: xxxxxx",
-            "Movie profile: xxxxxx","Movie profile: xxxxxx","Movie profile: xxxxxx","Movie profile: xxxxxx","Movie profile: xxxxxx"
-    };
-    */
-
     SimpleDateFormat simFormat = new SimpleDateFormat("yyyy-MM-dd");
     Date d1;
     {
